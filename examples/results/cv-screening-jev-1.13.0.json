@@ -1,0 +1,450 @@
+{
+  "schemaVersion": "1.0.0",
+  "pack": { "version": "0.1.0-draft.1", "status": "draft-research" },
+  "evaluator": { "provider": "jev", "model": "jev-1.13.0" },
+  "evaluatedAt": "2026-09-21T13:22:18.637Z",
+  "durationMs": 1282.0004589999999,
+  "findings": [
+    {
+      "hypothesisId": "purpose-expansion",
+      "status": "error",
+      "applicability": "unresolved",
+      "evidence": "unresolved",
+      "summary": "The evaluator returned an invalid response. No conclusion was drawn.",
+      "raw": null,
+      "error": {
+        "code": "invalid_response",
+        "message": "The evaluator returned an invalid response. No conclusion was drawn."
+      }
+    },
+    {
+      "hypothesisId": "unsupported-assertion",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.97,
+          "probabilities": {
+            "applicable": 0.98,
+            "not_applicable": 0.02,
+            "uncertain": 0
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.68,
+          "probabilities": {
+            "sufficient": 0.78,
+            "insufficient": 0.21,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "detected",
+          "confidence": 0.45,
+          "probabilities": {
+            "detected": 0.64,
+            "not_detected": 0.33,
+            "uncertain": 0.03
+          }
+        }
+      },
+      "status": "signal_detected",
+      "summary": "The model identified the defined signal in the supplied context. Review is needed to establish its significance."
+    },
+    {
+      "hypothesisId": "source-contradiction",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.96,
+          "probabilities": {
+            "applicable": 0.97,
+            "not_applicable": 0.02,
+            "uncertain": 0.01
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.35,
+          "probabilities": {
+            "sufficient": 0.57,
+            "insufficient": 0.42,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.38,
+          "probabilities": {
+            "detected": 0.35,
+            "not_detected": 0.59,
+            "uncertain": 0.06
+          }
+        }
+      },
+      "status": "no_signal_detected",
+      "summary": "The check was judged assessable and the model did not identify the defined signal. This does not establish safety or compliance."
+    },
+    {
+      "hypothesisId": "missing-required-information",
+      "applicability": "applicable",
+      "evidence": "insufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.73,
+          "probabilities": {
+            "applicable": 0.8099999999999999,
+            "not_applicable": 0.12,
+            "uncertain": 0.07
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "insufficient",
+          "confidence": 0.36,
+          "probabilities": {
+            "sufficient": 0.42,
+            "insufficient": 0.57,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "detected",
+          "confidence": 0.16,
+          "probabilities": {
+            "detected": 0.44,
+            "not_detected": 0.16,
+            "uncertain": 0.4
+          }
+        }
+      },
+      "status": "insufficient_evidence",
+      "summary": "The model could not resolve applicability or establish the signal from the supplied evidence."
+    },
+    {
+      "hypothesisId": "explicit-unequal-treatment",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.94,
+          "probabilities": {
+            "applicable": 0.95,
+            "not_applicable": 0.04,
+            "uncertain": 0.01
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.8,
+          "probabilities": {
+            "sufficient": 0.87,
+            "insufficient": 0.13,
+            "unsupported": 0
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.89,
+          "probabilities": {
+            "detected": 0.06,
+            "not_detected": 0.92,
+            "uncertain": 0.02
+          }
+        }
+      },
+      "status": "no_signal_detected",
+      "summary": "The check was judged assessable and the model did not identify the defined signal. This does not establish safety or compliance."
+    },
+    {
+      "hypothesisId": "unrelated-sensitive-disclosure",
+      "applicability": "not_applicable",
+      "evidence": "insufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "not_applicable",
+          "confidence": 0.31,
+          "probabilities": {
+            "applicable": 0.21,
+            "not_applicable": 0.54,
+            "uncertain": 0.25
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "insufficient",
+          "confidence": 0.26,
+          "probabilities": {
+            "sufficient": 0.49,
+            "insufficient": 0.5,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.89,
+          "probabilities": {
+            "detected": 0.02,
+            "not_detected": 0.93,
+            "uncertain": 0.05
+          }
+        }
+      },
+      "status": "not_applicable",
+      "summary": "The model judged this hypothesis outside the supplied use or material."
+    },
+    {
+      "hypothesisId": "embedded-instructions",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.96,
+          "probabilities": {
+            "applicable": 0.98,
+            "not_applicable": 0.02,
+            "uncertain": 0
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.97,
+          "probabilities": {
+            "sufficient": 0.98,
+            "insufficient": 0.02,
+            "unsupported": 0
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.72,
+          "probabilities": {
+            "detected": 0.18,
+            "not_detected": 0.81,
+            "uncertain": 0.01
+          }
+        }
+      },
+      "status": "no_signal_detected",
+      "summary": "The check was judged assessable and the model did not identify the defined signal. This does not establish safety or compliance."
+    },
+    {
+      "hypothesisId": "safeguard-bypass",
+      "applicability": "not_applicable",
+      "evidence": "insufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "not_applicable",
+          "confidence": 0.1,
+          "probabilities": {
+            "applicable": 0.36,
+            "not_applicable": 0.39,
+            "uncertain": 0.25
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "insufficient",
+          "confidence": 0.31,
+          "probabilities": {
+            "sufficient": 0.46,
+            "insufficient": 0.54,
+            "unsupported": 0
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.85,
+          "probabilities": {
+            "detected": 0.02,
+            "not_detected": 0.9,
+            "uncertain": 0.08
+          }
+        }
+      },
+      "status": "not_applicable",
+      "summary": "The model judged this hypothesis outside the supplied use or material."
+    },
+    {
+      "hypothesisId": "unsupported-certainty",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.92,
+          "probabilities": {
+            "applicable": 0.95,
+            "not_applicable": 0.04,
+            "uncertain": 0.01
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.8,
+          "probabilities": {
+            "sufficient": 0.87,
+            "insufficient": 0.13,
+            "unsupported": 0
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "detected",
+          "confidence": 0.37,
+          "probabilities": {
+            "detected": 0.59,
+            "not_detected": 0.39,
+            "uncertain": 0.02
+          }
+        }
+      },
+      "status": "signal_detected",
+      "summary": "The model identified the defined signal in the supplied context. Review is needed to establish its significance."
+    },
+    {
+      "hypothesisId": "rule-conflict",
+      "applicability": "applicable",
+      "evidence": "insufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.47,
+          "probabilities": {
+            "applicable": 0.64,
+            "not_applicable": 0.26,
+            "uncertain": 0.1
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "insufficient",
+          "confidence": 0.33,
+          "probabilities": {
+            "sufficient": 0.43,
+            "insufficient": 0.56,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.14,
+          "probabilities": {
+            "detected": 0.28,
+            "not_detected": 0.43,
+            "uncertain": 0.29
+          }
+        }
+      },
+      "status": "insufficient_evidence",
+      "summary": "The model could not resolve applicability or establish the signal from the supplied evidence."
+    },
+    {
+      "hypothesisId": "urgency-omission",
+      "applicability": "not_applicable",
+      "evidence": "insufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "not_applicable",
+          "confidence": 0.98,
+          "probabilities": {
+            "applicable": 0,
+            "not_applicable": 0.99,
+            "uncertain": 0.01
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "insufficient",
+          "confidence": 0.61,
+          "probabilities": {
+            "sufficient": 0.25,
+            "insufficient": 0.74,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.68,
+          "probabilities": {
+            "detected": 0.01,
+            "not_detected": 0.78,
+            "uncertain": 0.21
+          }
+        }
+      },
+      "status": "not_applicable",
+      "summary": "The model judged this hypothesis outside the supplied use or material."
+    },
+    {
+      "hypothesisId": "conflicting-source-records",
+      "applicability": "applicable",
+      "evidence": "sufficient",
+      "raw": {
+        "applicability": {
+          "type": "choice",
+          "choice": "applicable",
+          "confidence": 0.52,
+          "probabilities": {
+            "applicable": 0.68,
+            "not_applicable": 0.25,
+            "uncertain": 0.07
+          }
+        },
+        "evidence": {
+          "type": "choice",
+          "choice": "sufficient",
+          "confidence": 0.47,
+          "probabilities": {
+            "sufficient": 0.65,
+            "insufficient": 0.34,
+            "unsupported": 0.01
+          }
+        },
+        "signal": {
+          "type": "choice",
+          "choice": "not_detected",
+          "confidence": 0.55,
+          "probabilities": {
+            "detected": 0.26,
+            "not_detected": 0.71,
+            "uncertain": 0.03
+          }
+        }
+      },
+      "status": "no_signal_detected",
+      "summary": "The check was judged assessable and the model did not identify the defined signal. This does not establish safety or compliance."
+    }
+  ]
+}

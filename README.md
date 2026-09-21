@@ -75,6 +75,8 @@ node dist/cli.js batch examples/batch.jsonl > findings.jsonl
 node dist/cli.js --help
 ```
 
+For a larger example with two plain-text inputs, see the [fictionalised CV-screening review](examples/cv-screening.md), including its recorded live findings and unresolved evaluation error.
+
 Use `-` instead of a filename for stdin. Batch output contains `{line, report}` or `{line, error}` per nonblank input line. Invalid rows do not discard later rows. Exit codes are `0` for completed evaluation, `1` for input/provider/I/O errors, and `2` for incorrect CLI usage. A detected signal does not set a failure exit code: your workflow decides what action to take.
 
 To install the current source into another Node.js project, run `npm pack` here and install the resulting `.tgz` there. Import `evaluate` from `@romaingratier/zazie`. The package is ESM and includes declarations and JSON Schemas.
