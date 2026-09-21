@@ -36,12 +36,13 @@ try {
       type: 'module',
     }),
   );
-  // npm ci has already cached runtime dependencies. This check requires no registry access.
+  // npm ci caches tarballs, but a clean consumer may still need registry metadata.
+  // Prefer cached artifacts while exercising a real install of the pinned package.
   run(
     npm,
     [
       'install',
-      '--offline',
+      '--prefer-offline',
       '--ignore-scripts',
       '--no-audit',
       '--no-fund',
