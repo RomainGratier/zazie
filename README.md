@@ -116,8 +116,6 @@ The project is a single strict TypeScript package with a model-independent core,
 
 See [architecture](docs/architecture.md), [the specification](docs/specification.md), [contributing](CONTRIBUTING.md), and [security reporting](SECURITY.md). `npm run check` runs type checking, offline coverage tests, compilation, schema drift checks, and formatting. CI runs it on Node.js 22 and 24.
 
-OpenHands' current [repository boundaries and developer guidance](https://github.com/OpenHands/OpenHands#architecture) informed the emphasis on clear module ownership, runnable contributor commands, and explicit validation. Zazie is an independent project; no OpenHands implementation was copied.
-
 ## License
 
 Original code, hypothesis definitions, documentation, and synthetic evaluation assets are [MIT licensed](LICENSE). Third-party SDKs, model services, and external source material retain their own licenses and terms. An open-source library does not make the hosted Jev model open source.
