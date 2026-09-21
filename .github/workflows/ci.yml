@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,6 +16,10 @@ concurrency:
 
 jobs:
   check:
+    # The contribution-ci environment requires the owner's approval before
+    # allocating a runner, including for Dependabot and subsequent PR updates.
+    environment:
+      name: ${{ github.event_name == 'pull_request' && github.event.pull_request.user.login != 'RomainGratier' && 'contribution-ci' || 'maintainer-ci' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
@@ -23,6 +28,8 @@ jobs:
         node: [22, 24]
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node }}

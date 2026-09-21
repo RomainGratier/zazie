@@ -18,6 +18,12 @@ Run `npm run format` after editing and `npm run schemas` after changing contract
 
 ## Changes and review
 
+Fork the repository and open a pull request against `main`. Repository branches are reserved for the owner and Dependabot's dependency-update branches. Only the owner can merge changes; `main` requires a pull request, passing Node.js 22 and 24 checks, and resolved review conversations. Force pushes and branch deletion are blocked on `main`.
+
+Outside pull requests require maintainer approval before GitHub Actions runs. CI also uses the `contribution-ci` environment, whose sole reviewer is `@RomainGratier`, for every pull request authored by someone else, including Dependabot. Each new run waits for approval before allocating a runner. The owner reviews the proposed code and workflow changes, then uses GitHub's workflow approval and **Review deployments** controls to authorize testing. This environment is an approval gate for tests; it does not deploy the package. Owner-authored changes use `maintainer-ci`.
+
+Dependabot groups routine minor and patch updates monthly, with at most one open version-update pull request per ecosystem (npm and GitHub Actions). Major upgrades are handled deliberately. Dependency updates still require approval to run CI and are never automatically merged.
+
 Make atomic commits: each commit should explain one coherent change and include its meaningful tests and documentation. A larger initial feature can still be coherent. Use descriptive imperative messages, for example `fix: retain missing answers as evaluation errors`.
 
 In pull requests, describe the concrete behavior before and after, why it matters, and the commands actually run. Explain remaining limits. Review error handling, evidence sufficiency, missing responses, raw result interpretation, input privacy, backwards compatibility, and package exports. Avoid broad refactors alongside behavior changes.
