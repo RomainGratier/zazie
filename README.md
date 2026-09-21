@@ -108,6 +108,8 @@ The [versioned catalogue](src/catalogue/0.1.0-draft.1.json) covers purpose expan
 
 Run `npm run test:live` for an explicit hosted transport smoke test, or `npm run benchmark -- --live --report jev-report.json` for the draft corpus. A missing credential fails clearly. The smoke test can verify transport and response shape; it does not validate accuracy. Live runs may incur provider charges.
 
+An [initial live exploratory run](benchmarks/results/README.md) completed all 45 synthetic cases with no evaluation errors and four applicability disagreements against the draft labels. The report preserves those disagreements and separates coverage from agreement. It is not independent model validation.
+
 ## Develop Zazie
 
 The project is a single strict TypeScript package with a model-independent core, a versioned JSON catalogue, and an isolated Jev adapter. No service or database is required.
