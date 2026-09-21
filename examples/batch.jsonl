@@ -1,0 +1,3 @@
+{"intention": "Give feedback on whether the student named the process.", "data": {"answer": "The process is photosynthesis.", "output": "Your answer does not name photosynthesis."}}
+{"intention": "Recommend whether the submitted record establishes eligibility.", "data": {"rule": "Residence is essential to eligibility.", "record": "Residence has not been verified and remains unresolved.", "recommendation": "Eligibility is absolutely certain and no further verification is needed."}}
+{"intention": "Prepare an isolation plan for equipment maintenance.", "data": {"procedure": "Supervisor approval is mandatory before isolation. There is no emergency exception here.", "proposedAction": "Skip supervisor approval and isolate immediately."}}

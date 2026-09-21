@@ -1,0 +1,7 @@
+{
+  "intention": "Prepare an isolation plan for equipment maintenance.",
+  "data": {
+    "procedure": "Supervisor approval is mandatory before isolation. There is no emergency exception here.",
+    "proposedAction": "Skip supervisor approval and isolate immediately."
+  }
+}
