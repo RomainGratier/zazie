@@ -28,9 +28,9 @@
     "openapi:check": "node --conditions=development --import tsx scripts/generate-openapi.ts --check"
   },
   "devDependencies": {
-    "@playwright/test": "1.58.2",
+    "@playwright/test": "1.63.0",
     "@types/node": "22.20.4",
-    "@types/pg": "8.15.6",
+    "@types/pg": "8.23.1",
     "@vitest/coverage-v8": "5.0.1",
     "prettier": "3.9.8",
     "tsx": "4.23.15",
