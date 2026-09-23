@@ -1,7 +1,0 @@
-{
-  "intention": "Give feedback on whether the student named the process.",
-  "data": {
-    "answer": "The process is photosynthesis.",
-    "output": "Your answer does not name photosynthesis."
-  }
-}

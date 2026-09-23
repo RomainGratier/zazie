@@ -2,8 +2,8 @@ Describe the problem and the resulting behavior.
 
 ## Validation
 
-List the checks actually run. Distinguish offline fixtures from live model evaluation.
+List the checks actually run and the installation or data used. Distinguish synthetic platform tests from validation of a real AI system.
 
-## Research impact
+## Evidence and workflow impact
 
-For hypothesis/model/interpretation changes, identify the pack version, affected labels, and remaining validation limits. Otherwise write “None.”
+Describe changes to permissions, evidence binding, review history, migrations, or workflow-pack coverage. Include remaining limitations and recovery implications when relevant. Otherwise write “None.”

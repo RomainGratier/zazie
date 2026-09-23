@@ -1,0 +1,24 @@
+{
+  "name": "@zazie/worker",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@zazie/database": "workspace:*",
+    "@zazie/storage": "workspace:*",
+    "@zazie/domain": "workspace:*",
+    "@zazie/contracts": "workspace:*",
+    "@zazie/api": "workspace:*"
+  }
+}

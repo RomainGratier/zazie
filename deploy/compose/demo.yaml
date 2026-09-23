@@ -1,0 +1,30 @@
+services:
+  api:
+    depends_on:
+      keycloak:
+        condition: service_started
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.4
+    profiles: [demo]
+    command: [start-dev, --import-realm]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: demo-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: local-demo-admin-only
+      KC_HOSTNAME: http://keycloak.localhost:${ZAZIE_IDENTITY_PORT:-8080}
+      KC_HTTP_PORT: ${ZAZIE_IDENTITY_PORT:-8080}
+      KC_HTTP_ENABLED: 'true'
+      ZAZIE_DEMO_PUBLIC_URL: ${PUBLIC_URL:-http://localhost:3000}
+    ports:
+      - '127.0.0.1:${ZAZIE_IDENTITY_PORT:-8080}:${ZAZIE_IDENTITY_PORT:-8080}'
+    networks:
+      default:
+        aliases: [keycloak.localhost]
+    volumes:
+      - ./keycloak-realm.json:/opt/keycloak/data/import/zazie-demo-realm.json:ro
+      - keycloak-demo:/opt/keycloak/data
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  keycloak-demo:
