@@ -1,6 +1,8 @@
-node_modules
-dist
+pnpm-lock.yaml
+**/dist
 coverage
-package-lock.json
-schemas
-reports
+playwright-report
+test-results
+node_modules
+packages/sdk-typescript/src/generated
+**/.generated/

@@ -1,73 +1,45 @@
 {
-  "name": "@romaingratier/zazie",
-  "version": "0.1.0",
-  "description": "A fixed, open research hypothesis engine for AI system risk signals.",
+  "name": "zazie-workspace",
+  "version": "0.2.0",
+  "private": true,
   "type": "module",
   "license": "MIT",
+  "packageManager": "pnpm@11.19.0",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.22.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RomainGratier/zazie.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RomainGratier/zazie/issues"
-  },
-  "homepage": "https://github.com/RomainGratier/zazie#readme",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./benchmark": {
-      "types": "./dist/benchmark.d.ts",
-      "import": "./dist/benchmark.js"
-    },
-    "./schemas/*": "./schemas/*"
-  },
-  "bin": {
-    "zazie": "./dist/cli.js"
-  },
-  "files": [
-    "dist",
-    "src",
-    "schemas",
-    "docs",
-    "examples",
-    "benchmarks",
-    "CONTRIBUTING.md",
-    "SECURITY.md",
-    "LICENSE",
-    "README.md"
-  ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit",
+    "dev": "node --conditions=development --import tsx apps/api/src/main.ts",
+    "worker": "node --conditions=development --import tsx apps/worker/src/main.ts",
+    "db:migrate": "node --conditions=development --import tsx packages/database/src/migrate.ts",
+    "bootstrap": "node --conditions=development --import tsx scripts/bootstrap.ts",
+    "seed": "node --conditions=development --import tsx scripts/seed.ts",
+    "retention": "node --conditions=development --import tsx scripts/retention.ts",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "tsc --noEmit && pnpm --filter @zazie/web typecheck",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "test:package": "npm run build && node scripts/verify-package.mjs",
-    "test:live": "node --env-file-if-exists=.env --import tsx scripts/live-smoke.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:e2e": "playwright test",
+    "test:package": "node scripts/sdk-package-smoke.mjs",
+    "openapi": "node --conditions=development --import tsx scripts/generate-openapi.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "schemas": "node --import tsx scripts/generate-schemas.ts",
-    "schemas:check": "node --import tsx scripts/generate-schemas.ts --check",
-    "check": "npm run typecheck && npm run test:coverage && npm run build && npm run schemas:check && npm run format:check",
-    "benchmark": "node --import tsx scripts/benchmark.ts",
-    "prepack": "npm run build"
-  },
-  "dependencies": {
-    "@typesafe-ai/sdk": "0.6.0",
-    "zod": "4.6.5"
+    "check": "pnpm typecheck && pnpm test && pnpm build && pnpm format:check",
+    "openapi:check": "node --conditions=development --import tsx scripts/generate-openapi.ts --check"
   },
   "devDependencies": {
+    "@playwright/test": "1.58.2",
     "@types/node": "22.20.4",
+    "@types/pg": "8.15.6",
     "@vitest/coverage-v8": "5.0.1",
-    "ajv": "8.20.0",
-    "ajv-formats": "3.0.1",
     "prettier": "3.9.8",
     "tsx": "4.23.15",
-    "typescript": "7.0.2",
-    "vitest": "5.0.1"
+    "typescript": "6.0.3",
+    "vitest": "5.0.1",
+    "@zazie/contracts": "workspace:*",
+    "@zazie/database": "workspace:*",
+    "@zazie/storage": "workspace:*",
+    "@zazie/workflow-packs": "workspace:*",
+    "@zazie/sdk-typescript": "workspace:*"
   }
 }

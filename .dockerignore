@@ -1,0 +1,17 @@
+.git
+**/node_modules
+**/dist
+**/.generated
+.env
+.env.*
+!.env.example
+coverage
+playwright-report
+test-results
+.artifacts
+.data
+.local
+backups
+reports
+*.log
+.DS_Store

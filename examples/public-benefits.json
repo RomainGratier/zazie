@@ -1,8 +1,0 @@
-{
-  "intention": "Recommend whether the submitted record establishes eligibility.",
-  "data": {
-    "rule": "Residence is essential to eligibility.",
-    "record": "Residence has not been verified and remains unresolved.",
-    "recommendation": "Eligibility is absolutely certain and no further verification is needed."
-  }
-}

@@ -8,3 +8,9 @@ coverage/
 .DS_Store
 reports/
 *.tsbuildinfo
+.data/
+test-results/
+playwright-report/
+*.backup
+*.dump
+**/.generated/
